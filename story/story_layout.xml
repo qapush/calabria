@@ -1,0 +1,44 @@
+<krpano>
+
+	<layer name="prev"
+		   type="image"
+		   url="prev.svg"
+		   keep="true"
+		   onclick="story_prev();"
+		   visible="false"
+		   enabled="false"
+		   scale.mobile="0.3"
+		   width="150px"
+		   height="prop"
+		   align="bottom"
+		   edge="right"
+		   y="200"
+		   x="-10"
+		   alpha="0.8"
+		   onover="tween(alpha,1,0.5)"
+		   onout="tween(alpha,0.8,0.5)"
+		   />
+		   
+		<layer name="next"
+		   type="image"
+		   url="next.svg"
+		   keep="true"
+		   align="bottom"
+		   edge="left"
+		   y="200"
+		   x="10"
+		   onclick="story_next();"
+		   scale.mobile="0.3"
+		   width="150px"
+		   height="prop"
+		   visible="true"
+		   alpha="0.8"
+		   onover="tween(alpha,1,0.5)"
+		   onout="tween(alpha,0.8,0.5)"
+		   />
+
+
+
+
+
+</krpano>

@@ -1,0 +1,258 @@
+<krpano>
+
+
+	<!-- INITIALIZE STORY VARIABLES -->
+
+	<action name="story_init" autorun="preinit" >
+		set(started,0);
+		set(story_step,0);
+		set(story_length,0);
+		for(set(i,0), i LT action.count, inc(i), 
+		  if(action[get(i)].type == "step",inc(story_length); ,);
+		);  
+		
+				 
+		
+		
+	</action>
+	
+	<!-- PREV NEXT ACTIONS -->
+	
+	<action name="story_next">
+		inc(story_step); 
+		txtadd(next_step_name,'action_',get(story_step));
+		
+		if(story_step GT 1,
+			set(layer[prev].visible,true);
+			set(layer[prev].enabled,true);
+				,
+		);
+		
+		if(story_step == get(story_length),
+			set(visible,false);
+			set(enabled,false);
+				,
+		);
+		
+		
+		action(get(next_step_name));
+		 
+	
+
+	</action> 
+	
+	
+	<action name="story_prev"> 
+	
+		dec(story_step);
+		txtadd(prev_step_name,'action_',get(story_step));
+		
+		if(story_step == 1,
+			set(layer[prev].visible,false)
+			set(layer[prev].enabled,false)
+				,
+		);
+		
+		if(story_step LT get(story_length),
+			set(layer[next].visible,true);
+			set(layer[next].enabled,true);
+				,
+		);	
+				
+		action(get(prev_step_name));
+			
+	</action>
+
+	<!-- REORDER BUTTONS ACTION -->
+
+	<action name="reorderbuttons">
+		
+		if(stagewidth LT 1200,
+			
+			set(layer[next].align, right);
+			set(layer[next].edge, right);
+			set(layer[next].url, "story/next_mobile.svg");
+			set(layer[next].y, 450);
+			set(layer[next].x, -40);
+
+			set(layer[prev].align, left);
+			set(layer[prev].edge, left);
+			set(layer[prev].url, "story/prev_mobile.svg");
+			set(layer[prev].y, 450);
+			set(layer[prev].x, -40);
+
+				,	set(layer[next].align, bottom);
+					set(layer[next].edge, left);
+					set(layer[next].url, "story/next.svg");
+					set(layer[next].y, 200); 
+
+					set(layer[prev].align, bottom);
+					set(layer[prev].edge, right);
+					set(layer[prev].url, "story/prev.svg");
+					set(layer[prev].y, 200); 
+		);
+
+	</action>
+	
+	
+
+	<!-- STEPS ACTIONS -->
+	
+	<action name="action_1" type="step">
+		
+		if(started === 0, 
+			js(textinit()); 
+			set(started,1);
+			set( events[story_events].onresize, js(resize()); );
+				, 
+				js(hidetext());
+				);
+		
+		
+		wait(0.5);
+		js(rendertext('text_1'));
+		looktohotspot(spot1,70);
+		
+		js(showtext());
+		
+
+		
+	</action>  
+	
+	<action name="action_2" type="step">
+		js(hidetext());
+		wait(0.5);
+		js(rendertext('text_2'));
+		
+		looktohotspot(spot2,70);
+		
+		js(showtext());
+	</action>
+	
+	<action name="action_3" type="step">
+		js(hidetext());
+		wait(0.5);
+		js(rendertext('text_3'));
+		
+		if(xml.scene === "scene_calabria_2",
+			loadscene(scene_calabria_1,null,MERGE);
+
+			, 
+			);
+	
+		looktohotspot(spot3,70);
+		
+		js(showtext());
+
+	</action>
+	
+	<action name="action_4" type="step">
+		js(hidetext());
+		wait(0.5);
+		js(rendertext('text_1'));
+		
+
+		if(xml.scene === "scene_calabria_1",
+			loadscene(scene_calabria_2,null,MERGE);
+			js(showtext());
+			break();
+			, 
+			);
+			
+	</action>
+
+	
+	<!-- EVENTS -->
+
+	<!-- named -->
+
+	<events name="story_events"
+		keep="true"
+		onenterfullscreen=""
+        onexitfullscreen=""
+        onxmlcomplete=""
+        onpreviewcomplete=""
+        onloadcomplete=""
+        onblendcomplete=""
+        onnewpano=""
+        onremovepano=""
+        onnewscene=""
+        onxmlerror=""
+        onloaderror=""
+        onkeydown=""
+        onkeyup=""
+        onclick=""
+        onsingleclick=""
+        ondoubleclick="" 
+        onmousedown=""
+        onmouseup=""
+        onmousewheel=""
+        oncontextmenu=""
+        onidle=""
+        onviewchange=""
+        onviewchanged=""
+        onresize=""
+        onframebufferresize=""
+        onautorotatestart=""
+        onautorotatestop=""
+        onautorotateoneround=""
+        onautorotatechange=""
+        oniphonefullscreen=""
+        gyro_onavailable=""
+        gyro_onunavailable=""
+        gyro_onenable=""
+        gyro_ondisable=""
+        webvr_onavailable=""
+        webvr_onunavailable=""
+        webvr_onunknowndevice=""
+        webvr_onentervr=""
+        webvr_onexitvr=""
+        />
+
+	<!-- UNNAMED EVENTS -->
+	<events
+		onenterfullscreen=""
+        onexitfullscreen=""
+        onxmlcomplete=""
+        onpreviewcomplete=""
+        onloadcomplete=""
+        onblendcomplete=""
+        onnewpano=""
+        onremovepano=""
+        onnewscene=""
+        onxmlerror=""
+        onloaderror=""
+        onkeydown=""
+        onkeyup=""
+        onclick=""
+        onsingleclick=""
+        ondoubleclick="" 
+        onmousedown=""
+        onmouseup=""
+        onmousewheel=""
+        oncontextmenu=""
+        onidle=""
+        onviewchange=""
+        onviewchanged=""
+        onresize="reorderbuttons()"
+        onframebufferresize=""
+        onautorotatestart=""
+        onautorotatestop=""
+        onautorotateoneround=""
+        onautorotatechange=""
+        oniphonefullscreen=""
+        gyro_onavailable=""
+        gyro_onunavailable=""
+        gyro_onenable=""
+        gyro_ondisable=""
+        webvr_onavailable=""
+        webvr_onunavailable=""
+        webvr_onunknowndevice=""
+        webvr_onentervr=""
+        webvr_onexitvr=""
+        />
+
+
+	
+
+</krpano>
