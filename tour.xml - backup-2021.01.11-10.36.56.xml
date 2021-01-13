@@ -130,13 +130,10 @@
 
 		<hotspot name="spot1" style="spot" ath="69.096" atv="-17.531" alpha="0"/>
 
-		<hotspot name="spot2" style="spot" ath="1.253" atv="-15.612"/> 
-		<hotspot name="spot2_pop" style="pop" oy="-40" oy.mobile="-70" html="
-			Pizza Oven
-			"/>
-		
-		
-	
+		<hotspot name="spot2" style="spot" ath="-417" atv="-2"/> 
+		<hotspot name="spot2_pop" style="pop" oy="-50" oy.mobile="-80" html="
+			Featuring Coffee, 16-Foot Ceiling 16,000 Sqft Floor-plan [br] with 3-Floors Food and Cocktails
+			"/> 
  
 	</scene> 
 

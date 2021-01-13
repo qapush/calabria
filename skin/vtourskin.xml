@@ -255,15 +255,15 @@
 	<style name="skin_thumbtext_style" type="text" align="bottom" width="100%" y="5" enabled="false" bg="false" bgborder="false" css="calc:skin_settings.design_text_css + ' text-align:center; font-size:10px;'" textshadow="get:skin_settings.design_text_shadow" />
 
 	<!-- skin_hotspotstyle - style for the hotspots -->
-	<style name="skin_hotspotstyle" url="vtourskin_hotspot.png" edge="center" distorted="true"
+	<style name="skin_hotspotstyle" url="hs.svg" edge="center" distorted="true"
 	       tooltip=""
 	       linkedscene=""
 	       linkedscene_lookat=""
 	       onclick="skin_hotspotstyle_click();"
 	       depth="1000"
-	       scale="0.2"
-		alpha="0"
-		enabled="false"
+	       scale="0.3"
+		alpha="1"
+		enabled="true"
 	       />
 
 	<action name="skin_hotspotstyle_setup" scope="local">

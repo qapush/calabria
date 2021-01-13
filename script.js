@@ -3,16 +3,16 @@ const krpano_global = krpano.get('global');
 // Texts object
 const texts = {
     text_1: {
-        title: "Pizzeria Calabria",
-        description: "Savory Neapolitan pies prepared to perfection in a custom wood-fired stone oven designed and built in Italy. Made with San Marzano tomatoes and only the finest quality ingredients, our customers frequently tell us our pies are the best in the city, and that’s something we take great pride in."
+        title: "Just a point of interest",
+        description: "So it's just a text which appears when you look here. It looks different on desktop and mobile. The Hotspot is not clickable here and could be invisible. Next one is clickable instead. \n\n Click 'NEXT'"
     },
     text_2: {
-        title: "Title 2",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        title: "Another point of interest",
+        description: "Ok, it's an example of just looking somewhere without any hotspot     ."
     },
     text_3: {
-        title: "Title 3",
-        description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        title: "Pizzeria Calabria",
+        description: "Savory Neapolitan pies prepared to perfection in a custom wood-fired stone oven designed and built in Italy. Made with San Marzano tomatoes and only the finest quality ingredients, our customers frequently tell  us our pies are the best in the city, and that’s something we take great pride in."
     }
 } 
 
@@ -45,26 +45,37 @@ function rendertext(textid){
 
 function hidetext(){
     if(krpano_global.stagewidth <= 1200) {
-        text__container.style.top = -text__container.scrollHeight + 'px';
+        text__container.style.top = -text__container.scrollHeight * 2 + 'px';
     } else {
         text__container.style.left = -(text__container.scrollWidth + 3) + 'px';
     }
-}
-   
+}   
+    
 
 // Hide show function 
 
 function showtext(){
-     if(krpano_global.stagewidth <= 1200) {
-        text__container.style.top = '0px';
-    } else {
-        text__container.style.left = '0px';
-    }
+
+        if(krpano.get('current_scene') == krpano.get('xml.scene')) {
+
+            if(krpano_global.stagewidth <= 1200) {
+                text__container.style.top = '0px';
+            } else {
+                text__container.style.left = '0px';
+            }
+
+        };
+   
+        
+    
 }
 
 // Assign classes function 
 
 function textClasses(){
+
+    
+
     if(krpano_global.stagewidth <= 1200) {
         text__container.style.top = '';
         text__container.style.left = '';       
@@ -86,12 +97,105 @@ function resize(){
     hidetext();
     setTimeout( () => {
         textClasses();
-        showtext();
+        
+       
+
+            showtext();
+
+        
+        
     }, 550 );
 
 
 
 }
+
+// IMAGES
+
+// IMAGES LIST 
+
+const images = [
+    'story/img1.jpg',
+    'story/img2.png',
+    'story/img3.png',
+]
+
+const imagesTexts = [
+
+    'Popups like this could be used to showcase images. It\'s also an example of a feature working on JavaScript - it gives more control and works fast. \n \n So it has also a little bit transparent black background, so there remains some connection between the image and the context where it was opened.',
+
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    
+]
+
+
+// IMAGES ELEMENTS 
+
+const imgContainer = document.createElement('div');
+const imgWrapper = document.createElement('div');
+const img = document.createElement('img');
+const imgText = document.createElement('p');
+const imgClose = document.createElement('button');
+
+imgClose.innerText = "Close";
+
+imgContainer.classList.add('image__container', 'hidden');
+imgWrapper.classList.add('image__wrapper');
+img.classList.add('image__image');
+imgText.classList.add('image__text');
+imgClose.classList.add('image__close');
+
+imgContainer.append(imgWrapper);
+imgWrapper.append(img);
+imgWrapper.append(imgText);
+imgWrapper.append(imgClose);
+
+document.getElementById('krpanoSWFObject').insertAdjacentElement('afterbegin', imgContainer);
+
+imgClose.addEventListener('click', (e) => {
+    e.preventDefault();
+    if(imgContainer.style.opacity == 1) {
+        closeimage();
+    }
+});
+
+
+function showimage(imgId, textId) {
+   
+    imgContainer.classList.remove('hidden');
+    imgContainer.style.opacity = 0;
+    setTimeout(()=>{
+        imgContainer.style.opacity = 1;
+    },50) ;
+
+    if(textId !== null){
+        imgText.innerText = imagesTexts[textId];
+    } else {
+        console.log('ni');
+    }
+
+    img.setAttribute('src', images[imgId]);
+
+}
+
+function closeimage() {
+   
+    
+    imgContainer.style.opacity = 0;
+    setTimeout( () => {
+        imgContainer.classList.add('hidden');
+        imgText.innerText = '';
+    }, 500);
+    
+    
+
+
+
+}
+
+
 
 
 

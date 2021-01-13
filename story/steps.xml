@@ -1,0 +1,91 @@
+<krpano>
+
+<!-- STEPS ACTIONS -->
+	
+	<action name="action_1" type="step">
+
+    toscene('scene_calabria_1');
+    
+    if(started === 0, 
+			js(textinit()); 
+			set(started,1);
+			set( events[story_events].onresize, js(resize()); );
+				, 
+				js(hidetext());
+				);
+
+		
+        
+		
+		
+		close_pops();
+
+
+		js(rendertext('text_1'));
+
+		looktohotspot(spot1, get(view.fov));
+		
+		js(showtext());
+		
+		
+
+		
+	</action>  
+	
+	<action name="action_2" type="step">
+		toscene('scene_calabria_1');
+		js(hidetext());
+		wait(0.5);
+		close_pops();
+		looktohotspot(spot2, get(view.fov));
+		callwith(hotspot[spot2], 'onclick');
+		js(hidetext());
+
+	</action>
+	
+	<action name="action_3" type="step">
+		toscene('scene_calabria_1');
+		js(hidetext());
+		close_pops();
+		js(rendertext('text_2'));
+		
+		wait(BLEND);
+		looktohotspot(spot3, get(view.fov));
+		
+		js(showtext());
+
+	</action>
+	
+	<action name="action_4" type="step">
+
+
+		toscene('scene_calabria_1');
+		js(hidetext());
+		looktohotspot(spot4, get(view.fov));
+		js(hidetext());
+		callwith(hotspot[spot4], 'onclick');
+
+	</action>
+
+	<action name="action_5" type="step">
+		toscene('scene_calabria_2');
+		looktohotspot(spot1, get(view.fov));
+		js(hidetext());
+		js(rendertext('text_3'));
+		js(showtext());
+			
+	</action>
+
+	<action name="action_6" type="step">
+		toscene('scene_calabria_2');
+		js(hidetext());
+		wait(0.5);
+		close_pops();
+		looktohotspot(spot2, get(view.fov));
+		callwith(hotspot[spot2], 'onclick');
+		js(hidetext());
+
+			
+	</action>
+
+</krpano>

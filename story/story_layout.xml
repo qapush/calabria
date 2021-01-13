@@ -7,13 +7,8 @@
 		   onclick="story_prev();"
 		   visible="false"
 		   enabled="false"
-		   scale.mobile="0.3"
 		   width="150px"
 		   height="prop"
-		   align="bottom"
-		   edge="right"
-		   y="200"
-		   x="-10"
 		   alpha="0.8"
 		   onover="tween(alpha,1,0.5)"
 		   onout="tween(alpha,0.8,0.5)"
@@ -23,21 +18,68 @@
 		   type="image"
 		   url="next.svg"
 		   keep="true"
-		   align="bottom"
-		   edge="left"
-		   y="200"
-		   x="10"
 		   onclick="story_next();"
-		   scale.mobile="0.3"
 		   width="150px"
 		   height="prop"
 		   visible="true"
 		   alpha="0.8"
 		   onover="tween(alpha,1,0.5)"
 		   onout="tween(alpha,0.8,0.5)"
+
+
 		   />
 
+ 
+		<style name="spot"
+			alpha="1"
+			url="%HTMLPATH%/skin/hs.svg"
+			width="30"  
+			width.mobile="50"  
+			height="prop"
+			distorted="true"
+			onclick="click_open();"
+			onhover="tween(scale, 1.2, 0.3)"
+			onout="tween(scale, 1, 0.3)"
+			
+			
+		/>
 
+		<style name="spot_noclick"
+			alpha="1"
+			url="%HTMLPATH%/skin/hs.svg"
+			width="30"  
+			width.mobile="50"  
+			height="prop"
+			distorted="true"
+			enabled="false"		
+			
+		/>
+
+		<style name="spot_image"
+			alpha="1"
+			url="../skin/hs.svg"
+			width="30"  
+			width.mobile="50"  
+			height="prop"
+			distorted="true"
+	
+			
+		/>
+
+		<style name="pop"
+			type="text"
+			distorted="true"
+			scale="0.5"
+			css="font-family:Arial; font-size:2rem; color: #fff; padding: 15px;"
+			css.mobile="font-family:Arial; font-size:3rem; color: #fff; padding: 15px;"
+			bgcolor="0x000000"
+			bgalpha="0.8"
+			oy="-50"
+			oy.mobile="-70"
+			alpha="0"
+			enabled="false"
+			
+		/>
 
 
 

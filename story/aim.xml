@@ -1,0 +1,34 @@
+<krpano>
+
+<layer name="aim"
+       type="container"
+       keep="true"
+       parent=""
+       visible="true"
+       enabled="false"
+       handcursor="false"
+       maskchildren="false"
+       align="center"
+       edge=""
+       x=""
+       y=""
+       width="5"
+       height="5"
+       scale="1.0"
+       alpha="1.0"
+       crop=""
+       bgcolor="0x07FF00"
+       bgalpha="1"
+       bgborder="0"
+       bgroundedge="10"
+       
+       />
+
+       <events 
+		keep="true"
+		name="hvtrace"
+		onviewchange="showlog(true,top); trace(get(view.hlookat),'       ',get(view.vlookat),'       ',get(view.fov));"
+        />
+
+        
+</krpano>

@@ -1,11 +1,10 @@
-﻿<krpano version="1.20.9" title="Virtual Tour" onstart="" debugmode="false">
+﻿<krpano version="1.20.9" title="Virtual Tour" onstart="showlog()">
 
 	<include url="skin/vtourskin.xml" />
 	<include url="story/story_layout.xml" />
 	<include url="story/story_actions.xml" />
 	<include url="story/story_texts.xml" />
-	<include url="story/steps.xml" />
-	<!-- <include url="story/aim.xml" />  -->
+	<include url="story/aim.xml" />
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... --> 
 	<skin_settings maps="false"
@@ -80,7 +79,7 @@
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="-361.929" vlookat="1.597" fovtype="MFOV" fov="115.810" maxpixelzoom="0.7" fovmin="92.912206" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-160.151" vlookat="10.270" fovtype="MFOV" fov="92.912206" maxpixelzoom="0.7" fovmin="92.912206" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/calabria_1.tiles/preview.jpg" />
 
@@ -89,32 +88,18 @@
 		</image>
 		
 		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-160.151" atv="10.270" alpha="0" enabled="false"/>
 		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="48.032" atv="-1.487" alpha="0" enabled="false"/>
 		
-		
-		<hotspot name="spot1" style="spot_noclick" ath="-166" atv="11"/> 
-		<!-- <hotspot name="spot1_pop" style="pop" html="It's a hotspot 1"/>  --> 
-
-		<hotspot name="spot2" style="spot" ath="-417" atv="-2"/> 
-		<hotspot name="spot2_pop" style="pop"   oy="-70" oy.mobile="-110" html="
-			This is a popup over a clickable hotspot. [br][br]
-			It's also an example of a step without any textbox [br]appearing anywhere on the screen.
-			"/> 
-
-		<hotspot name="spot3" style="spot_noclick" ath="166" atv="-11" alpha="0"/> 
-
-		<hotspot name="spot4" style="spot_image" ath="94.525" atv="-2.484" onclick="showimage(0,0);"/> 
-		
-
-
-
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="0.740" atv="-1.015" alpha="0" enabled="false"/> 
 
 
 
 		
 		
 
-	</scene>   
+	</scene>  
  
 	<scene name="scene_calabria_2" title="calabria_2" onstart="" thumburl="panos/calabria_2.tiles/thumb.jpg" lat="" lng="" heading="">
 		
@@ -128,15 +113,7 @@
 			<cube url="panos/calabria_2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
 		</image>
 
-		<hotspot name="spot1" style="spot" ath="69.096" atv="-17.531" alpha="0"/>
-
-		<hotspot name="spot2" style="spot" ath="1.253" atv="-15.612"/> 
-		<hotspot name="spot2_pop" style="pop" oy="-40" oy.mobile="-70" html="
-			Pizza Oven
-			"/>
-		
-		
-	
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="69.096" atv="-17.531" linkedscene="scene_calabria_1" />
  
 	</scene> 
 

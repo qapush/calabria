@@ -4,6 +4,9 @@
 	<!-- INITIALIZE STORY VARIABLES -->
 
 	<action name="story_init" autorun="preinit" >
+
+	
+
 		set(started,0);
 		set(story_step,0);
 		set(story_length,0);
@@ -20,6 +23,8 @@
 	
 	<action name="story_next">
 		inc(story_step); 
+
+		
 		txtadd(next_step_name,'action_',get(story_step));
 		
 		if(story_step GT 1,
@@ -38,13 +43,16 @@
 		action(get(next_step_name));
 		 
 	
-
+ 
 	</action> 
 	
 	
 	<action name="story_prev"> 
-	
+		
 		dec(story_step);
+
+
+		if(xml.scene != current_scene, toscene(get(current_scene)););
 		txtadd(prev_step_name,'action_',get(story_step));
 		
 		if(story_step == 1,
@@ -63,103 +71,150 @@
 			
 	</action>
 
+
+
+
 	<!-- REORDER BUTTONS ACTION -->
 
 	<action name="reorderbuttons">
+
+
 		
 		if(stagewidth LT 1200,
 			
-			set(layer[next].align, right);
+			set(layer[next].align, rightbottom);
 			set(layer[next].edge, right);
+			set(layer[next].y, 200px);
+			set(layer[next].x, -40px);
 			set(layer[next].url, "story/next_mobile.svg");
-			set(layer[next].y, 450);
-			set(layer[next].x, -40);
 
-			set(layer[prev].align, left);
+			set(layer[prev].align, leftbottom);
 			set(layer[prev].edge, left);
+			set(layer[prev].y, 200px);
+			set(layer[prev].x, -40px);
+
 			set(layer[prev].url, "story/prev_mobile.svg");
-			set(layer[prev].y, 450);
-			set(layer[prev].x, -40);
+
 
 				,	set(layer[next].align, bottom);
 					set(layer[next].edge, left);
 					set(layer[next].url, "story/next.svg");
 					set(layer[next].y, 200); 
+					set(layer[next].x, 10); 
 
 					set(layer[prev].align, bottom);
 					set(layer[prev].edge, right);
 					set(layer[prev].url, "story/prev.svg");
 					set(layer[prev].y, 200); 
+					set(layer[prev].x, -10); 
+		);
+
+	</action>
+
+	<!-- HOTSPOT ACTIONS -->
+	
+		
+	<action name="setuppops">
+
+		for(set(i,0), i LT hotspot.count, inc(i), 
+ 			 
+			
+			if(hotspot[get(i)].style === 'spot'
+				,
+				set(pop_ath, get(hotspot[get(i)].ath));
+				set(pop_atv, get(hotspot[get(i)].atv));
+				txtadd(popname, get(hotspot[get(i)].name), '_pop' );
+				
+				set(hotspot[get(popname)].atv, get(pop_atv));
+				set(hotspot[get(popname)].ath, get(pop_ath));
+
+					,
+					<!-- else -->
+			  );
+
+				
+		);	
+
+	</action>
+
+	<action name="close_pops">
+
+		for(set(i,0), i LT hotspot.count, inc(i), 
+ 			 
+			
+			if(hotspot[get(i)].style === 'pop'
+				,
+	
+				tween(hotspot[get(i)].alpha, 0, 0.3);
+					,
+					<!-- else -->
+			  );
+
+				
+		);	
+
+		for(set(i,0), i LT hotspot.count, inc(i), 
+ 			 
+			
+			if(hotspot[get(i)].style === 'spot'
+				,
+	
+				set(hotspot[get(i)].url, "%HTMLPATH%/skin/hs.svg");
+				set(hotspot[get(i)].onclick, click_open());
+					,
+					<!-- else -->
+			  );
+
+				
 		);
 
 	</action>
 	
-	
+	<action name="click_open">
 
-	<!-- STEPS ACTIONS -->
-	
-	<action name="action_1" type="step">
-		
-		if(started === 0, 
-			js(textinit()); 
-			set(started,1);
-			set( events[story_events].onresize, js(resize()); );
-				, 
-				js(hidetext());
-				);
-		
-		
-		wait(0.5);
-		js(rendertext('text_1'));
-		looktohotspot(spot1,70);
-		
-		js(showtext());
-		
+		set(onclick, click_close(); );
+		txtadd(mypop, get(name),'_pop');
+		tween(hotspot[get(mypop)].alpha, 1, 0.3);
+		set(url, "%HTMLPATH%/skin/hs_close.svg");
 
-		
-	</action>  
-	
-	<action name="action_2" type="step">
-		js(hidetext());
-		wait(0.5);
-		js(rendertext('text_2'));
-		
-		looktohotspot(spot2,70);
-		
-		js(showtext());
+
 	</action>
-	
-	<action name="action_3" type="step">
-		js(hidetext());
-		wait(0.5);
-		js(rendertext('text_3'));
-		
-		if(xml.scene === "scene_calabria_2",
-			loadscene(scene_calabria_1,null,MERGE);
 
-			, 
+	<action name="click_close">
+	
+		set(onclick, click_open(); );
+		txtadd(mypop, get(name),'_pop');
+		tween(hotspot[get(mypop)].alpha, 0, 0.3);
+		set(url, "%HTMLPATH%/skin/hs.svg");
+
+
+	</action>
+
+	<action name="showimage">
+
+		jscall( showimage (%1, %2) );
+
+
+
+	</action>
+
+	<action name="toscene">
+
+		if(xml.scene != %1,
+			loadscene(%1,null,MERGE, get(skin_settings.loadscene_blend));, 
 			);
-	
-		looktohotspot(spot3,70);
-		
-		js(showtext());
+
+		set(current_scene, %1);
 
 	</action>
-	
-	<action name="action_4" type="step">
-		js(hidetext());
-		wait(0.5);
-		js(rendertext('text_1'));
-		
 
-		if(xml.scene === "scene_calabria_1",
-			loadscene(scene_calabria_2,null,MERGE);
-			js(showtext());
-			break();
-			, 
-			);
-			
-	</action>
+	
+	
+
+	
+
+	
+
 
 	
 	<!-- EVENTS -->
@@ -172,7 +227,7 @@
         onexitfullscreen=""
         onxmlcomplete=""
         onpreviewcomplete=""
-        onloadcomplete=""
+        onloadcomplete="setuppops()"
         onblendcomplete=""
         onnewpano=""
         onremovepano=""
@@ -234,7 +289,7 @@
         onidle=""
         onviewchange=""
         onviewchanged=""
-        onresize="reorderbuttons()"
+        onresize="reorderbuttons();"
         onframebufferresize=""
         onautorotatestart=""
         onautorotatestop=""
