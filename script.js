@@ -66,6 +66,7 @@ function showtext(){
 
         };
    
+        krpano.call('hidemenu()');
         
     
 }
@@ -80,12 +81,14 @@ function textClasses(){
         text__container.style.top = '';
         text__container.style.left = '';       
         text__container.classList.remove('text__container--desktop');
+        text__container.classList.remove('text__container--mobile');
         text__container.classList.add('text__container--mobile');
 
     } else {
         text__container.style.top = '';
         text__container.style.left = '';
         text__container.classList.remove('text__container--mobile');
+        text__container.classList.remove('text__container--desktop');
         text__container.classList.add('text__container--desktop');
     }
 }
@@ -96,14 +99,18 @@ function textClasses(){
 function resize(){
     hidetext();
     setTimeout( () => {
+
         textClasses();
-        
-       
 
-            showtext();
+            if( krpano.get('action[get(step_name)].text')){
+                showtext();
+            }
 
-        
-        
+            krpano.call('updatescreen();');
+
+            
+            
+            
     }, 550 );
 
 

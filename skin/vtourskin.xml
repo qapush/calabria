@@ -379,12 +379,12 @@
 	</layer>
 
 	<!-- previous/next scene buttons for the hidden skin mode -->
-	<layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
+	<!-- <layer name="skin_btn_prev_fs" keep="true" type="container" align="lefttop"  x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(-1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_prev_fs_icon" style="skin_base" crop="0|64|64|64"  align="center" scale="0.5" enabled="false" />
 	</layer>
 	<layer name="skin_btn_next_fs" keep="true" type="container" align="righttop" x="-50" width="40" height="100%" bgcapture="true" alpha="0.0" enabled="false" capture="false" zorder="2" onclick="skin_nextscene_loop(+1);" onhover="tween(alpha,1.0);" onout="tween(alpha,0.25);" ondown.touch="onhover();" onup.touch="onout();">
 		<layer name="skin_btn_next_fs_icon" style="skin_base" crop="64|64|64|64" align="center" scale="0.5" enabled="false" />
-	</layer>
+	</layer> -->
 
 
 	<!-- gyro plugin -->
@@ -512,7 +512,7 @@
 					keep=true,
 					parent='skin_thumbs',
 					align='lefttop',
-					crop=get(thumbcrop),
+					<!-- crop=get(thumbcrop), -->
 					width=get(thumbwidth),
 					height=get(thumbheight),
 					x=calc(thumbpadding + i*thumbxoffset),

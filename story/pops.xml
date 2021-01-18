@@ -1,0 +1,16 @@
+<krpano>
+
+<!-- <data name="spot1a_pop_data"><![CDATA[
+    <span style="color:#CD7829; font-weight:bold"> It's also an example </span> <br>
+    of a step without any textbox [br]appearing anywhere on the screen.
+]]></data> -->
+
+<data name="spot1a_pop_data"><![CDATA[
+    Welcome to Caffe Calabria: Artisan coffee,  <br>
+    pizza, cocktails, craft beer & Calabria  <br>
+    brand roasts. Business Acquisition Opportunity.
+]]></data>
+
+
+
+</krpano>

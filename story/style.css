@@ -6,10 +6,10 @@
     top:50%; 
     z-index:9999; 
     transform: translateY(-50%);
-    width:500px;
-    background-color: rgba(0,0,0,0.8);
+    width:350px;
+    background-color: rgba(0,0,0,0.9);
     border-radius: 0 10px 10px 0;
-    border: 2px solid grey;
+    border: 2px solid rgb(42, 43, 42);
     border-left: none;
     cursor: initial;
     left: -700px;
@@ -24,7 +24,7 @@
     z-index:9999; 
     transform: translateX(-50%);
     width:101%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.9);
     border-radius: 0;
     border: none;
     cursor: initial;
@@ -44,9 +44,29 @@
 }
 
 .text__description {
-    text-align: justify;
+    text-align: left;
     padding: 10px;
     margin: 0px;
+}
+
+.text__container--desktop .text__title, .text__container--desktop .text__description {
+    font-size: 1.15rem;
+}
+
+.text__container--mobile .text__title, .text__container--mobile .text__description {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .text__container--mobile .text__title, .text__container--mobile .text__description {
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .text__container--mobile .text__title, .text__container--mobile .text__description {
+        font-size: 1.2vw;
+    }
 }
 
 .image__container {
@@ -91,7 +111,7 @@
 
 .image__close {
     margin: 20px;
-    background-color:#CC7725;
+    background-color:#E02026;
     /* border: 1px solid rgba(255,255,255,0.5); */
     border: none;
     padding: 15px;
@@ -119,18 +139,6 @@
     display: block;
 }
 
-/* @media screen and (min-width: 800px) { 
-    .image__image {
-
-        max-width: 90%;
-        display: block;
-    }
-
-    .image__text {
-        max-width: 90%;
-    } 
-    
-} */
 
 @media screen and (min-width: 1300px) { 
     .image__image {

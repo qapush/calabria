@@ -2,30 +2,31 @@
 
 <!-- STEPS ACTIONS -->
 	
-	<action name="action_1" type="step">
+	<action name="action_1" type="step" text="true">
 
     toscene('scene_calabria_1');
     
-    if(started === 0, 
+    <!-- if(started === 0, 
 			js(textinit()); 
 			set(started,1);
 			set( events[story_events].onresize, js(resize()); );
 				, 
 				js(hidetext());
-				);
-
-		
+				); -->
+	close_pops();
+	looktohotspot(spot1a, get(view.fov));
+	callwith(hotspot[spot1a], 'onclick');
         
 		
 		
-		close_pops();
-
-
-		js(rendertext('text_1'));
-
-		looktohotspot(spot1, get(view.fov));
 		
-		js(showtext());
+
+
+		<!-- js(rendertext('text_1')); -->
+
+		
+		
+		<!-- js(showtext()); -->
 		
 		
 
@@ -34,25 +35,25 @@
 	
 	<action name="action_2" type="step">
 		toscene('scene_calabria_1');
-		js(hidetext());
+		<!-- js(hidetext()); -->
 		wait(0.5);
 		close_pops();
 		looktohotspot(spot2, get(view.fov));
 		callwith(hotspot[spot2], 'onclick');
-		js(hidetext());
+		<!-- js(hidetext()); -->
 
 	</action>
 	
-	<action name="action_3" type="step">
+	<action name="action_3" type="step" text="true">
 		toscene('scene_calabria_1');
-		js(hidetext());
+		<!-- js(hidetext()); -->
 		close_pops();
-		js(rendertext('text_2'));
+		<!-- js(rendertext('text_2')); -->
 		
 		wait(BLEND);
 		looktohotspot(spot3, get(view.fov));
 		
-		js(showtext());
+		<!-- js(showtext()); -->
 
 	</action>
 	
@@ -60,30 +61,30 @@
 
 
 		toscene('scene_calabria_1');
-		js(hidetext());
+		<!-- js(hidetext()); -->
 		looktohotspot(spot4, get(view.fov));
-		js(hidetext());
+		<!-- js(hidetext()); -->
 		callwith(hotspot[spot4], 'onclick');
 
 	</action>
 
-	<action name="action_5" type="step">
+	<action name="action_5" type="step"  text="true">
 		toscene('scene_calabria_2');
 		looktohotspot(spot1, get(view.fov));
-		js(hidetext());
-		js(rendertext('text_3'));
-		js(showtext());
+		<!-- js(hidetext()); -->
+		<!-- js(rendertext('text_3')); -->
+		<!-- js(showtext()); -->
 			
 	</action>
 
 	<action name="action_6" type="step">
 		toscene('scene_calabria_2');
-		js(hidetext());
+		<!-- js(hidetext()); -->
 		wait(0.5);
 		close_pops();
 		looktohotspot(spot2, get(view.fov));
 		callwith(hotspot[spot2], 'onclick');
-		js(hidetext());
+		<!-- js(hidetext()); -->
 
 			
 	</action>

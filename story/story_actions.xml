@@ -25,7 +25,7 @@
 		inc(story_step); 
 
 		
-		txtadd(next_step_name,'action_',get(story_step));
+		txtadd(step_name,'action_',get(story_step));
 		
 		if(story_step GT 1,
 			set(layer[prev].visible,true);
@@ -40,7 +40,7 @@
 		);
 		
 		
-		action(get(next_step_name));
+		action(get(step_name));
 		 
 	
  
@@ -53,7 +53,7 @@
 
 
 		if(xml.scene != current_scene, toscene(get(current_scene)););
-		txtadd(prev_step_name,'action_',get(story_step));
+		txtadd(step_name,'action_',get(story_step));
 		
 		if(story_step == 1,
 			set(layer[prev].visible,false)
@@ -67,7 +67,7 @@
 				,
 		);	
 				
-		action(get(prev_step_name));
+		action(get(step_name));
 			
 	</action>
 
@@ -84,13 +84,13 @@
 			
 			set(layer[next].align, rightbottom);
 			set(layer[next].edge, right);
-			set(layer[next].y, 200px);
+			set(layer[next].y, 160px);
 			set(layer[next].x, -40px);
 			set(layer[next].url, "story/next_mobile.svg");
 
 			set(layer[prev].align, leftbottom);
 			set(layer[prev].edge, left);
-			set(layer[prev].y, 200px);
+			set(layer[prev].y, 160px);
 			set(layer[prev].x, -40px);
 
 			set(layer[prev].url, "story/prev_mobile.svg");
@@ -137,6 +137,27 @@
 
 	</action>
 
+	<action name="setuppopsdata">
+
+		for(set(i,0), i LT hotspot.count, inc(i), 
+ 			 
+			
+			if(hotspot[get(i)].style === 'pop'
+				,
+				txtadd(htmlattr, 'data:', get(hotspot[get(i)].name), '_data' );
+				
+				set(hotspot[get(i)].html, get(htmlattr));
+
+					,
+					<!-- else -->
+			  );
+
+				
+		);	
+
+	</action>
+
+
 	<action name="close_pops">
 
 		for(set(i,0), i LT hotspot.count, inc(i), 
@@ -159,7 +180,7 @@
 			if(hotspot[get(i)].style === 'spot'
 				,
 	
-				set(hotspot[get(i)].url, "%HTMLPATH%/skin/hs.svg");
+				set(hotspot[get(i)].crop, 0|0|200|200);
 				set(hotspot[get(i)].onclick, click_open());
 					,
 					<!-- else -->
@@ -175,7 +196,7 @@
 		set(onclick, click_close(); );
 		txtadd(mypop, get(name),'_pop');
 		tween(hotspot[get(mypop)].alpha, 1, 0.3);
-		set(url, "%HTMLPATH%/skin/hs_close.svg");
+		set(crop, 0|200|200|200);
 
 
 	</action>
@@ -185,7 +206,7 @@
 		set(onclick, click_open(); );
 		txtadd(mypop, get(name),'_pop');
 		tween(hotspot[get(mypop)].alpha, 0, 0.3);
-		set(url, "%HTMLPATH%/skin/hs.svg");
+		set(crop, 0|0|200|200);
 
 
 	</action>
@@ -210,7 +231,23 @@
 
 	
 	
+	<!-- MENU ACTIONS -->
+	
+	<action name="hidemenu">
 
+		tween(layer[menu__container].x, -110, 0.4, easeincirc, 
+				tween(layer[menu__info].x, -50, 0.4, easeincirc); 
+				set(layer[menu__info].enabled, true););
+
+	</action>
+
+	<action name="showmenu">
+		set(layer[menu__info].enabled, false);
+		tween(layer[menu__info].x, -120, 0.4, easeincirc);
+		tween(layer[menu__container].x, 0, 0.4, easeincirc);
+		<!-- callwith(layer[menu__info], 'onout'); -->
+
+	</action>
 	
 
 	
@@ -227,7 +264,7 @@
         onexitfullscreen=""
         onxmlcomplete=""
         onpreviewcomplete=""
-        onloadcomplete="setuppops()"
+        onloadcomplete="setuppops(); setuppopsdata()"
         onblendcomplete=""
         onnewpano=""
         onremovepano=""

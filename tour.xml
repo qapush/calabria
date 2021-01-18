@@ -5,7 +5,8 @@
 	<include url="story/story_actions.xml" />
 	<include url="story/story_texts.xml" />
 	<include url="story/steps.xml" />
-	<!-- <include url="story/aim.xml" />  -->
+	<include url="story/pops.xml" />
+	<include url="story/aim.xml" /> 
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... --> 
 	<skin_settings maps="false"
@@ -24,7 +25,7 @@
 	               followmousecontrol="false"
 	               title="true" 
 	               thumbs="true" 
-	               thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
+	               thumbs_width="120" thumbs_height="40" thumbs_padding="10"
 	               thumbs_opened="true"
 	               thumbs_text="false"
 	               thumbs_dragging="true"
@@ -75,12 +76,12 @@
 
 
 	
-	<scene name="scene_calabria_1" title="calabria_1" onstart="" thumburl="panos/calabria_1.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_calabria_1" title="calabria_1" onstart="" thumburl="panos/calabria_1.tiles/thumb.svg" lat="" lng="" heading="">
 
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="-361.929" vlookat="1.597" fovtype="MFOV" fov="115.810" maxpixelzoom="0.7" fovmin="92.912206" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-361.929" vlookat="1.597" fovtype="MFOV" fov="95" fov.mobile="115.810" maxpixelzoom="0.7" fovmin="92.912206" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/calabria_1.tiles/preview.jpg" />
 
@@ -92,18 +93,22 @@
 		
 		
 		
-		<hotspot name="spot1" style="spot_noclick" ath="-166" atv="11"/> 
+		<!-- <hotspot name="spot1" style="spot_noclick" ath="-166" atv="11"/>  -->
 		<!-- <hotspot name="spot1_pop" style="pop" html="It's a hotspot 1"/>  --> 
 
-		<hotspot name="spot2" style="spot" ath="-417" atv="-2"/> 
-		<hotspot name="spot2_pop" style="pop"   oy="-70" oy.mobile="-110" html="
-			This is a popup over a clickable hotspot. [br][br]
-			It's also an example of a step without any textbox [br]appearing anywhere on the screen.
-			"/> 
+		<!-- <hotspot name="spot2" style="spot" ath="-417" atv="-2"/> 
+		<hotspot name="spot2_pop" style="pop"   oy="-70" oy.mobile="-110" />  -->
 
-		<hotspot name="spot3" style="spot_noclick" ath="166" atv="-11" alpha="0"/> 
+		<!-- <hotspot name="spot3" style="spot_noclick" ath="166" atv="-11" alpha="0"/> 
 
-		<hotspot name="spot4" style="spot_image" ath="94.525" atv="-2.484" onclick="showimage(0,0);"/> 
+		<hotspot name="spot4" style="spot_image" ath="94.525" atv="-2.484" onclick="showimage(0,0);"/>  -->
+
+
+		<hotspot name="spot1a" style="spot" ath="-369.45" atv="-1.96"/> 
+		<hotspot name="spot1a_pop" style="pop" html=""/>  
+
+
+
 		
 
 
@@ -116,11 +121,11 @@
 
 	</scene>   
  
-	<scene name="scene_calabria_2" title="calabria_2" onstart="" thumburl="panos/calabria_2.tiles/thumb.jpg" lat="" lng="" heading="">
+	<scene name="scene_calabria_2" title="calabria_2" onstart="" thumburl="panos/calabria_2.tiles/thumb.svg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="95" fov.mobile="115.810" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_2.tiles/preview.jpg" />
 
@@ -140,6 +145,42 @@
  
 	</scene> 
 
+	<scene name="scene_calabria_3" title="calabria_3" onstart="" thumburl="panos/calabria_3.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_3.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+	</scene>
+
+	<scene name="scene_calabria_4" title="calabria_4" onstart="" thumburl="panos/calabria_4.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_4.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_4.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+	</scene>
+
+
+	<scene name="scene_calabria_6" title="calabria_6" onstart="" thumburl="panos/calabria_6.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_6.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_6.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+	</scene>
 
 
 
