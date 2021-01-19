@@ -213,4 +213,13 @@ function textinit(){
 
 }
 
+var p = document.getElementById("krpanoSWFObject").querySelector('div:nth-child(3)');
+p.addEventListener("contextmenu", function(){
+
+
+    if(p.lastChild.style.zIndex == 2147483647 || p.lastChild.style.zIndex == 99999999999){
+        p.lastChild.firstChild.firstChild.style.display = 'none';
+    }
+})  
+
 

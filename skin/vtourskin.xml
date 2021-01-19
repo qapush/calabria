@@ -518,7 +518,9 @@
 					x=calc(thumbpadding + i*thumbxoffset),
 					y=get(thumbpadding),
 					linkedscene=get(currentscene.name),
-					onclick='copy(layer[skin_thumbborder].parent, name); skin_loadscene(get(linkedscene),get(skin_settings.loadscene_blend));'
+					onclick='if(story_step GE story_length
+						, copy(layer[skin_thumbborder].parent, name);  skin_loadscene(get(linkedscene),get(skin_settings.loadscene_blend));
+							,)'
 				);
 					
 				set(currentscene, 
@@ -544,6 +546,8 @@
 			);
 		);
 	</action>
+
+	
 
 
 	<!-- called from bing- or google-maps plugin onmapready event -->
@@ -853,7 +857,7 @@
 			set(layer[skin_thumbborder].visible, false);
 		);
 		
-		layer[skin_thumbs].scrolltocenter(get(scene[get(newscenenameorindex)].thumbx), get(scene[get(newscenenameorindex)].thumby));
+		layer[skin_thumbs].scrolltocenter( get(scene[get(newscenenameorindex)].thumbx) , get(scene[get(newscenenameorindex)].thumby) );
 		loadscene(get(scene[get(newscenenameorindex)].name), null, get(skin_settings.loadscene_flags), get(blendmode));
 	</action>
 
@@ -984,10 +988,13 @@
 
 
 	<action name="skin_keydown_event">
-		if(keycode == 33, skin_nextscene_loop(-1) );            	<!-- Page Up   - previous scene -->
-		if(keycode == 34, skin_nextscene_loop(+1) );            	<!-- Page Dowm - next scene -->
-		if(keycode == 35, skin_gotoscene(calc(scene.count-1)) );	<!-- End       - last scene -->
-		if(keycode == 36, skin_gotoscene(0) );                  	<!-- Home/Pos1 - first scene -->
+		<!-- if(keycode == 33, skin_nextscene_loop(-1) );            	
+		if(keycode == 34, skin_nextscene_loop(+1) );            	
+		if(keycode == 35, skin_gotoscene(calc(scene.count-1)) );
+		if(keycode == 36, skin_gotoscene(0) );                   -->
+		if(keycode == 37 AND story_step GT 1, callwith(layer[prev], 'onclick') );      
+		if(keycode == 39 AND story_step != story_length, callwith(layer[next], 'onclick') );      
+
 	</action>
 
 
@@ -1178,18 +1185,15 @@
 
 
 	<!-- context menu - https://krpano.com/docu/xml/#contextmenu -->
-	<contextmenu>
+		<!-- context menu - http://krpano.com/docu/xml/#contextmenu -->
+	<contextmenu versioninfo="false" fullscreen="false" touch="false">
 		<item name="kr" caption="KRPANO"     />
-		<item name="fs" caption="FULLSCREEN" />
-		<item name="cc" caption="Change Controlmode" onclick="skin_changecontrolmode();"  separator="above" />
-		<item name="nv" caption="Normal View"        onclick="skin_view_normal();"        showif="view.vlookatrange == 180" separator="above"     />
-		<item name="fv" caption="Fisheye View"       onclick="skin_view_fisheye();"       showif="view.vlookatrange == 180" devices="flash|webgl" />
-		<item name="sv" caption="Stereographic View" onclick="skin_view_stereographic();" showif="view.vlookatrange == 180" devices="flash|webgl" />
-		<item name="av" caption="Architectural View" onclick="skin_view_architectural();" showif="view.vlookatrange == 180"                       />
-		<item name="pv" caption="Pannini View"       onclick="skin_view_pannini();"       showif="view.vlookatrange == 180" devices="flash|webgl" />
-		<item name="lp" caption="Little Planet View" onclick="skin_view_littleplanet();"  showif="view.vlookatrange == 180" devices="flash|webgl" />
-		<item name="sa" caption="Start Autotour"     onclick="autorotate.start();" separator="both" showif="autorotate.isrotating == false" visible="calc:skin_settings.autotour == true" />
-		<item name="ta" caption="Stop Autotour"      onclick="autorotate.stop();"  separator="both" showif="autorotate.isrotating == true"  visible="calc:skin_settings.autotour == true" />
+		<item name="cr" caption="Atrium Visual, Inc."        onclick=""   separator="false"      />
+		
+	
+		
+		
+
 	</contextmenu>
 
 
@@ -1202,23 +1206,7 @@
 		);
 	</action>
 		
-	<action name="skin_changecontrolmode_updatecaption" autorun="onstart" devices="html5">
-		txtadd(contextmenu.item[cc].caption,
-			"Controlmode: ",
-			"[span style=[sq]", calc(control.mode == 'drag' ? "text-decoration:underline" :""), "[sq]]",
-			"Drag",
-			"[/span]",
-			" | ",
-			"[span style=[sq]", calc(control.mode == 'follow' ? "text-decoration:underline" :""), "[sq]]",
-			"Follow",
-			"[/span]",
-			" | ",
-			"[span style=[sq]", calc(control.mode == 'moveto' ? "text-decoration:underline" :""), "[sq]]",
-			"MoveTo",
-			"[/span]",
-			);
-	</action>
-
+	
 	<action name="skin_view_look_straight">
 		if(view.vlookat LT -80 OR view.vlookat GT +80,
 			tween(view.vlookat, 0.0, 1.0, easeInOutSine);

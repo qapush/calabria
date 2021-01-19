@@ -4,11 +4,13 @@
 	<!-- INITIALIZE STORY VARIABLES -->
 
 	<action name="story_init" autorun="preinit" >
-
-	
+		
+		if(isset(story_step), 
+			trace(get(story_step)) 
+				, set(story_step,0); 
+		);
 
 		set(started,0);
-		set(story_step,0);
 		set(story_length,0);
 		for(set(i,0), i LT action.count, inc(i), 
 		  if(action[get(i)].type == "step",inc(story_length); ,);
@@ -226,6 +228,19 @@
 			);
 
 		set(current_scene, %1);
+
+		layer[skin_thumbs].scrolltocenter( get(scene[%1].thumbx) , get(scene[%1].thumby) );
+
+	</action>
+
+	<action name="laststep">
+
+		if(xml.scene == %1,
+			looktohotspot(%2, get(view.fov));
+			loadscene(%3,null,MERGE, get(skin_settings.loadscene_blend));, 
+			);
+
+		
 
 	</action>
 

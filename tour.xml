@@ -6,7 +6,7 @@
 	<include url="story/story_texts.xml" />
 	<include url="story/steps.xml" />
 	<include url="story/pops.xml" />
-	<include url="story/aim.xml" /> 
+	<!-- <include url="story/aim.xml" />  -->
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... --> 
 	<skin_settings maps="false"
@@ -107,17 +107,19 @@
 		<hotspot name="spot1a" style="spot" ath="-369.45" atv="-1.96"/> 
 		<hotspot name="spot1a_pop" style="pop" html=""/>  
 
+		<hotspot name="spot1b" style="spot" ath="-353.91" atv="-1.96"/> 
+		<hotspot name="spot1b_pop" style="pop" html=""/>  
+
+		<hotspot name="spot1c" style="spot" ath="-272.13" atv="0.67"/> 
+		<hotspot name="spot1c_pop" style="pop" html=""/>  
+
+		<hotspot name="spot1d" style="spot" ath="-516.02" atv="-20.15"/> 
+		<hotspot name="spot1d_pop" style="pop" html=""/>  
+
+		<hotspot name="spot1e" style="spot" ath="-361" atv="1.59"/> 
+		<hotspot name="spot1e_pop" style="pop" html=""/>  
 
 
-		
-
-
-
-
-
-
-		
-		
 
 	</scene>   
  
@@ -133,12 +135,22 @@
 			<cube url="panos/calabria_2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
 		</image>
 
-		<hotspot name="spot1" style="spot" ath="69.096" atv="-17.531" alpha="0"/>
+		<hotspot name="spot2a" style="spot" ath="59.64" atv="-0.18"/> 
+		<hotspot name="spot2b" style="spot" ath="87.53" atv="-5.99"/> 
+		<hotspot name="spot2c" style="spot" ath="53.89" atv="-5.80"/> 
+		<hotspot name="spot2d" style="spot" ath="45.16" atv="-5.80"/> 
+		<hotspot name="spot2e" style="spot" ath="0.19" atv="-10.45"/> 
+		<hotspot name="spot2f" style="spot" ath="53.89" atv="-0.18"/> 
+		
+		
+		<hotspot name="spot2a_pop" style="pop" html=""/>  
+		<hotspot name="spot2b_pop" style="pop" html=""/>  
+		<hotspot name="spot2c_pop" style="pop" html=""/>  
+		<hotspot name="spot2d_pop" style="pop" html=""/>  
+		<hotspot name="spot2e_pop" style="pop" html=""/>  
+		<hotspot name="spot2f_pop" style="pop" html=""/>  
 
-		<hotspot name="spot2" style="spot" ath="1.253" atv="-15.612"/> 
-		<hotspot name="spot2_pop" style="pop" oy="-40" oy.mobile="-70" html="
-			Pizza Oven
-			"/>
+		
 		
 		
 	
@@ -155,6 +167,21 @@
 			<cube url="panos/calabria_3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
 		</image>
 
+
+		<hotspot name="spot3a" style="spot" ath="-320" atv="-1.87"/> 
+		<hotspot name="spot3b" style="spot" ath="6.8" atv="0.51"/> 
+		<hotspot name="spot3c" style="spot" ath="-16.61" atv="2.14"/> 
+		<hotspot name="spot3d" style="spot" ath="-95.86" atv="-3.90"/> 
+		<hotspot name="spot3e" style="spot" ath="-116.40" atv="-0.56"/> 
+
+		<hotspot name="spot3a_pop" style="pop" html=""/>  
+		<hotspot name="spot3b_pop" style="pop" html=""/>  
+		<hotspot name="spot3c_pop" style="pop" html=""/>  
+		<hotspot name="spot3d_pop" style="pop" html=""/>  
+		<hotspot name="spot3e_pop" style="pop" html=""/>  
+
+		
+
 	</scene>
 
 	<scene name="scene_calabria_4" title="calabria_4" onstart="" thumburl="panos/calabria_4.tiles/thumb.svg" lat="" lng="" heading="">
@@ -166,6 +193,23 @@
 		<image>
 			<cube url="panos/calabria_4.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
 		</image>
+
+		<hotspot name="spot4a" style="spot" ath="19.85" atv="6.19"/> 
+		<hotspot name="spot4b" style="spot" ath="76.52" atv="6.76"/> 
+		<hotspot name="spot4c" style="spot" ath="-51.27" atv="-2.3"/> 
+		<hotspot name="spot4d" style="spot" ath="-89.60" atv="4.582"/> 
+		<hotspot name="spot4e" style="spot" ath="-74.61" atv="0.77"/> 
+		<hotspot name="spot4f" style="spot" ath="-65.88" atv="1.69"/> 
+		<hotspot name="spot4g" style="spot" ath="-140.68" atv="2.09"/> 
+
+		<hotspot name="spot4a_pop" style="pop" html=""/>  
+		<hotspot name="spot4b_pop" style="pop" html=""/>  
+		<hotspot name="spot4c_pop" style="pop" html=""/>  
+		<hotspot name="spot4d_pop" style="pop" html=""/>  
+		<hotspot name="spot4e_pop" style="pop" html=""/>  
+		<hotspot name="spot4f_pop" style="pop" html=""/>  
+		<hotspot name="spot4g_pop" style="pop" html=""/>  
+		
 
 	</scene>
 
@@ -180,7 +224,233 @@
 			<cube url="panos/calabria_6.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
 		</image>
 
+		<hotspot name="spot5a" style="spot" ath="-12.165" atv="0.11"/> 
+		<hotspot name="spot5b" style="spot" ath="-56.69" atv="2.869"/> 
+		<hotspot name="spot5c" style="spot" ath="-88.29" atv="-19.66"/> 
+		<hotspot name="spot5d" style="spot" ath="-112.74" atv="2.136"/> 
+		<hotspot name="spot5e" style="spot" ath="-97.25" atv="2.136"/> 
+
+		<hotspot name="spot5a_pop" style="pop" html=""/>  
+		<hotspot name="spot5b_pop" style="pop" html=""/>  
+		<hotspot name="spot5c_pop" style="pop" html=""/>  
+		<hotspot name="spot5d_pop" style="pop" html=""/>  
+		<hotspot name="spot5e_pop" style="pop" html=""/>  
+
 	</scene>
+
+	<scene name="scene_calabria_8" title="calabria_8" onstart="" thumburl="panos/calabria_8.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_8.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_8.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot6a" style="spot" ath="0" atv="0"/> 
+		<hotspot name="spot6b" style="spot" ath="107.9" atv="1.755"/> 
+		<hotspot name="spot6c" style="spot" ath="84.78" atv="1.755"/> 
+		<hotspot name="spot6d" style="spot" ath="68.48" atv="1.755"/> 
+		<hotspot name="spot6e" style="spot" ath="55.399" atv="1.755"/> 
+		<hotspot name="spot6f" style="spot" ath="134.70066" atv="1.755"/> 
+		<hotspot name="spot6g" style="spot" ath="-137.8" atv="1.755"/> 
+		<hotspot name="spot6h" style="spot" ath="164.707" atv="1.755"/> 
+
+		<hotspot name="spot6a_pop" style="pop" html=""/>  
+		<hotspot name="spot6b_pop" style="pop" html=""/>  
+		<hotspot name="spot6c_pop" style="pop" html=""/>  
+		<hotspot name="spot6d_pop" style="pop" html=""/>  
+		<hotspot name="spot6e_pop" style="pop" html=""/>  
+		<hotspot name="spot6f_pop" style="pop" html=""/>  
+		<hotspot name="spot6g_pop" style="pop" html=""/>  
+		<hotspot name="spot6h_pop" style="pop" html=""/>  
+
+	</scene>
+
+	<scene name="scene_calabria_10" title="calabria_10" onstart="" thumburl="panos/calabria_10.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_10.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_10.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot7a" style="spot" ath="0" atv="0"/> 
+		<hotspot name="spot7b" style="spot" ath="107.72" atv="0"/> 
+		<hotspot name="spot7c" style="spot" ath=" -179.67" atv="5"/> 
+		<hotspot name="spot7d" style="spot" ath=" -179.67" atv="1"/> 
+
+		<hotspot name="spot7a_pop" style="pop" html=""/>  
+		<hotspot name="spot7b_pop" style="pop" html=""/>  
+		<hotspot name="spot7c_pop" style="pop" html=""/>  
+		<hotspot name="spot7d_pop" style="pop" html=""/>  
+
+
+	</scene>
+
+	<scene name="scene_calabria_11" title="calabria_11" onstart="" thumburl="panos/calabria_11.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_11.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_11.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot8a" style="spot_noclick" ath="153.29" atv="1.613"/>
+		<hotspot name="spot8b" style="spot" ath="-90.87" atv="0.402"/>
+		<hotspot name="spot8c" style="spot" ath="74.54" atv="-9.324"/>
+		<hotspot name="spot8d" style="spot" ath="74.54" atv="1.12"/>
+
+		<hotspot name="spot8b_pop" style="pop" html=""/>  
+		<hotspot name="spot8c_pop" style="pop" html=""/>  
+		<hotspot name="spot8d_pop" style="pop" html=""/>  
+
+	</scene>
+
+	<scene name="scene_calabria_12" title="calabria_12" onstart="" thumburl="panos/calabria_12.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_12.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_12.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot9a" style="spot" ath="177.96" atv="1.59"/>
+		<hotspot name="spot9b" style="spot" ath="-90.81" atv="-3.8409"/>
+		<hotspot name="spot9c" style="spot_noclick" ath="42.552" atv="0.6651"/>
+		<hotspot name="spot9d" style="spot" ath="-15.86" atv="1.51"/>
+
+		
+		<hotspot name="spot9a_pop" style="pop" html=""/>  
+		<hotspot name="spot9b_pop" style="pop" html=""/>  
+		<hotspot name="spot9d_pop" style="pop" html=""/>  
+
+	</scene>
+
+	<scene name="scene_calabria_13" title="calabria_13" onstart="" thumburl="panos/calabria_13.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_13.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_13.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot10a" style="spot" ath="-65.67" atv="3.014"/>
+		<hotspot name="spot10b" style="spot" ath="-34.20" atv="-2.8762"/>
+		<hotspot name="spot10c" style="spot_noclick" ath="7.87" atv="2.47"/>
+		<hotspot name="spot10d" style="spot" ath="97.861" atv="0"/>
+
+		<hotspot name="spot10a_pop" style="pop" html=""/>  
+		<hotspot name="spot10b_pop" style="pop" html=""/>  
+ 
+		<hotspot name="spot10d_pop" style="pop" html=""/>  
+
+
+
+	</scene>
+
+	<scene name="scene_calabria_14" title="calabria_14" onstart="" thumburl="panos/calabria_14.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_14.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_14.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot11a" style="spot" ath="-95.573" atv="1.98"/>
+		<hotspot name="spot11b" style="spot" ath="-13.984" atv="-3.67"/>
+		<hotspot name="spot11c" style="spot" ath="109.21" atv="1.72"/>
+
+		<hotspot name="spot11a_pop" style="pop" html=""/>  
+		<hotspot name="spot11b_pop" style="pop" html=""/>  
+		<hotspot name="spot11c_pop" style="pop" html=""/>  
+
+	</scene>
+
+	<scene name="scene_calabria_15" title="calabria_15" onstart="" thumburl="panos/calabria_15.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_15.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_15.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		
+		<hotspot name="spot12a" style="spot" ath="392.716" atv="1.477"/>
+		<hotspot name="spot12b" style="spot" ath="288.13" atv="1.78765"/>
+		<hotspot name="spot12c" style="spot" ath="294.25" atv="1.78765"/>
+		<hotspot name="spot12d" style="spot" ath="-127.410" atv="6.249"/>
+		<hotspot name="spot12e" style="spot" ath="-200.297" atv="6.4044"/>
+
+		<hotspot name="spot12a_pop" style="pop" html=""/>  
+		<hotspot name="spot12b_pop" style="pop" html=""/>  
+		<hotspot name="spot12c_pop" style="pop" html=""/>  
+		<hotspot name="spot12d_pop" style="pop" html=""/>  
+		<hotspot name="spot12e_pop" style="pop" html=""/>  
+		
+
+	</scene>
+
+
+
+	<scene name="scene_calabria_17" title="calabria_17" onstart="" thumburl="panos/calabria_17.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_17.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_17.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot13a" style="spot" ath="35.830" atv="13.458"/>
+		<hotspot name="spot13b" style="spot_noclick" ath="154.763" atv="9.8422"/>
+		<hotspot name="spot13c" style="spot" ath="6.4782" atv="4.725"/>
+
+		
+		<hotspot name="spot13a_pop" style="pop" html=""/>  
+
+		<hotspot name="spot13c_pop" style="pop" html=""/> 
+
+	</scene>
+
+
+	<scene name="scene_calabria_24" title="calabria_24" onstart="" thumburl="panos/calabria_24.tiles/thumb.svg" lat="" lng="" heading="">
+
+		<view hlookat="-1.567" vlookat="-10.579" fovtype="MFOV" fov="123.999" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/calabria_24.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/calabria_24.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
+		</image>
+
+		<hotspot name="spot14a" style="spot" ath="-18.646478" atv="1.2529"/>
+		<hotspot name="spot14b" style="spot" ath="-28.337" atv="1.2529"/>
+		<hotspot name="spot14c" style="spot_noclick" ath="182.257" atv="1.2529"/>
+		
+
+		<hotspot name="spot14a_pop" style="pop" html=""/>  
+		<hotspot name="spot14b_pop" style="pop" html=""/>  
+	 
+		
+	</scene>
+
+		
+
 
 
 

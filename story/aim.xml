@@ -27,7 +27,7 @@
        <events 
 		keep="true"
 		name="hvtrace"
-		onviewchange="showlog(true,top); trace(get(view.hlookat),'       ',get(view.vlookat),'       ',get(view.fov));"
+		onviewchange="showlog(true,top); trace(get(view.hlookat),'       ',get(view.vlookat),'       ',get(view.fov),'       ', get(stagescale));"
         />
 
         

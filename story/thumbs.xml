@@ -1,0 +1,83 @@
+
+	<action name="skin_addthumbs" scope="local">
+		
+		<!-- build a global array of visible scene thumbnails -->
+		def(global.thumbarray, array);
+		set(thumbcount, 0);
+		for(set(i,0), i LT scene.count, inc(i),
+			if(isvalue(scene[get(i)].thumburl) AND scene[get(i)].skipthumb != true,
+				<!-- link thumbarray[i1] to scene[i2] -->
+				set(thumbarray[get(thumbcount)], get(scene[get(i)]));
+				set(scene[get(i)].sceneindex, get(i));
+				set(scene[get(i)].thumbindex, get(thumbcount));
+				inc(thumbcount);
+			);
+		);
+		
+		if(skin_settings.thumbs == false,
+			set(layer[skin_btn_thumbs].visible,false);
+		  ,
+			copy(thumbwidth, skin_settings.thumbs_width);
+			copy(thumbheight, skin_settings.thumbs_height);
+			copy(thumbpadding, skin_settings.thumbs_padding);
+			copy(thumbcrop, skin_settings.thumbs_crop);
+
+			calc(thumbxoffset, thumbwidth + thumbpadding);
+			calc(thumbxcenter, thumbxoffset * 0.5);
+			calc(thumbbarwidth, thumbxoffset * thumbcount + thumbpadding);
+			calc(thumbbarheight, thumbpadding + thumbheight + thumbpadding);
+
+			if(skin_settings.thumbs_scrollindicator,
+				copy(layer[skin_thumbs_scrollindicator].y, thumbbarheight);
+				add(thumbbarheight, layer[skin_thumbs_scrollindicator].height);
+			);
+			
+			set(layer[skin_thumbs], width=get(thumbbarwidth), height=get(thumbbarheight) );
+
+			calc(layer[skin_thumbs_scrollleft].y, thumbbarheight * 0.5);
+			calc(layer[skin_thumbs_scrollright].y, thumbbarheight * 0.5);
+
+			for(set(i,0), i LT thumbcount, inc(i),
+			
+				copy(currentscene, thumbarray[get(i)]);
+
+				calc(thumbname, 'skin_thumb_' + i);
+				addlayer(get(thumbname));
+
+				set(layer[get(thumbname)],
+					url=get(currentscene.thumburl),
+					keep=true,
+					parent='skin_thumbs',
+					align='lefttop',
+					<!-- crop=get(thumbcrop), -->
+					width=get(thumbwidth),
+					height=get(thumbheight),
+					x=calc(thumbpadding + i*thumbxoffset),
+					y=get(thumbpadding),
+					linkedscene=get(currentscene.name),
+					onclick='copy(layer[skin_thumbborder].parent, name); skin_loadscene(get(linkedscene),get(skin_settings.loadscene_blend));'
+				);
+					
+				set(currentscene, 
+					thumbx=calc(thumbpadding + i*thumbxoffset + thumbxcenter),
+					thumby=get(thumbpadding)
+				);
+					
+				if(skin_settings.tooltips_thumbs,
+					set(layer[get(thumbname)].tooltip, get(currentscene.title) );
+					layer[get(thumbname)].loadstyle(skin_tooltips);
+				);
+					
+				if(skin_settings.thumbs_text,
+					calc(thumbtext, 'skin_thumbtext_' + i);
+					addlayer(get(thumbtext));
+					layer[get(thumbtext)].loadstyle(skin_thumbtext_style);
+					set(layer[get(thumbtext)], keep=true, parent=get(thumbname), html=get(currentscene.title) );
+				);
+			);
+			
+			if(thumbcount == 1,
+				set(layer[skin_thumbs].align, 'lefttop');
+			);
+		);
+	</action>
