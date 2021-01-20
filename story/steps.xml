@@ -15,7 +15,7 @@
 				); -->
 
 	close_pops();
-	looktohotspot(spot1a, get(view.fov));
+	aimtospot(spot1a, get(view.fov));
 	callwith(hotspot[spot1a], 'onclick');
 	
 	<!-- js(rendertext('text_1')); -->
@@ -29,8 +29,10 @@
 	<action name="action_2" type="step">
 		toscene('scene_calabria_1');
 		<!-- js(hidetext()); -->
+		js('closeimage()');
 		close_pops();
-		looktohotspot(spot1b, get(view.fov));
+		
+		aimtospot(spot1b, get(view.fov));
 		callwith(hotspot[spot1b], 'onclick');
 		<!-- js(hidetext()); -->
 
@@ -42,25 +44,26 @@
 		<!-- close_pops(); -->
 		<!-- js(rendertext('text_2')); -->		
 		<!-- wait(BLEND);
-		looktohotspot(spot3, get(view.fov)); -->	
+		aimtospot(spot3, get(view.fov)); -->	
 		<!-- js(showtext()); -->
 
 		close_pops();
-		looktohotspot(spot1c, get(view.fov));
-		callwith(hotspot[spot1c], 'onclick');
+		aimtospot(spot1c, get(view.fov));
+		showimage(0,0);
 
 	</action>
 	
 	<action name="action_4" type="step">
 
 		toscene('scene_calabria_1');
+		js('closeimage()');
 		<!-- js(hidetext()); -->
-		<!-- looktohotspot(spot4, get(view.fov)); -->
+		<!-- aimtospot(spot4, get(view.fov)); -->
 		<!-- js(hidetext()); -->
 		<!-- callwith(hotspot[spot4], 'onclick'); -->
 
 		close_pops();
-		looktohotspot(spot1d, get(view.fov));
+		aimtospot(spot1d, get(view.fov));
 		callwith(hotspot[spot1d], 'onclick');
 
 	</action>
@@ -69,12 +72,12 @@
 
 		toscene('scene_calabria_1');
 		<!-- js(hidetext()); -->
-		<!-- looktohotspot(spot4, get(view.fov)); -->
+		<!-- aimtospot(spot4, get(view.fov)); -->
 		<!-- js(hidetext()); -->
 		<!-- callwith(hotspot[spot4], 'onclick'); -->
 
 		close_pops();
-		looktohotspot(spot1e, get(view.fov));
+		aimtospot(spot1e, get(view.fov));
 		callwith(hotspot[spot1e], 'onclick');
 
 	</action>
@@ -85,9 +88,9 @@
 		<!-- laststep('scene_calabria_1','spot1e','scene_calabria_2'); -->
 		toscene('scene_calabria_2');
 		close_pops();
-		looktohotspot(spot2a, get(view.fov));
+		aimtospot(spot2a, get(view.fov));
 		callwith(hotspot[spot2a], 'onclick');
-		<!-- looktohotspot(spot1, get(view.fov)); -->
+		<!-- aimtospot(spot1, get(view.fov)); -->
 		<!-- js(hidetext()); -->
 		<!-- js(rendertext('text_3')); -->
 		<!-- js(showtext()); -->
@@ -97,14 +100,14 @@
 	<action name="action_7" type="step">
 		toscene('scene_calabria_2');
 		close_pops();
-		looktohotspot(spot2b, get(view.fov));
+		aimtospot(spot2b, get(view.fov));
 		callwith(hotspot[spot2b], 'onclick');
 
 
 		<!-- js(hidetext());
 		wait(0.5);
 		close_pops();
-		looktohotspot(spot2, get(view.fov));
+		aimtospot(spot2, get(view.fov));
 		callwith(hotspot[spot2], 'onclick');
 		js(hidetext()); -->
 
@@ -114,7 +117,7 @@
 	<action name="action_8" type="step">
 		toscene('scene_calabria_2');
 		close_pops();
-		looktohotspot(spot2c, get(view.fov));
+		aimtospot(spot2c, get(view.fov));
 		callwith(hotspot[spot2c], 'onclick');
 			
 	</action>
@@ -122,7 +125,7 @@
 	<action name="action_9" type="step">
 		toscene('scene_calabria_2');
 		close_pops();
-		looktohotspot(spot2d, get(view.fov));
+		aimtospot(spot2d, get(view.fov));
 		callwith(hotspot[spot2d], 'onclick');
 			
 	</action>
@@ -130,7 +133,7 @@
 	<action name="action_10" type="step">
 		toscene('scene_calabria_2');
 		close_pops();
-		looktohotspot(spot2e, get(view.fov));
+		aimtospot(spot2e, get(view.fov));
 		callwith(hotspot[spot2e], 'onclick');
 			
 	</action>
@@ -138,7 +141,7 @@
 	<action name="action_11" type="step">
 		toscene('scene_calabria_2');
 		close_pops();
-		looktohotspot(spot2f, get(view.fov));
+		aimtospot(spot2f, get(view.fov));
 		callwith(hotspot[spot2f], 'onclick');
 			
 	</action>
@@ -148,7 +151,7 @@
 	<action name="action_12" type="step">
 		toscene('scene_calabria_3');
 		close_pops();
-		looktohotspot(spot3a, get(view.fov));
+		aimtospot(spot3a, get(view.fov));
 		callwith(hotspot[spot3a], 'onclick');
 			
 	</action>
@@ -156,7 +159,7 @@
 	<action name="action_13" type="step">
 		toscene('scene_calabria_3');
 		close_pops();
-		looktohotspot(spot3b, get(view.fov));
+		aimtospot(spot3b, get(view.fov));
 		callwith(hotspot[spot3b], 'onclick');
 			
 	</action>
@@ -164,7 +167,7 @@
 	<action name="action_14" type="step">
 		toscene('scene_calabria_3');
 		close_pops();
-		looktohotspot(spot3c, get(view.fov));
+		aimtospot(spot3c, get(view.fov));
 		callwith(hotspot[spot3c], 'onclick');
 			
 	</action>
@@ -172,7 +175,7 @@
 	<action name="action_15" type="step">
 		toscene('scene_calabria_3');
 		close_pops();
-		looktohotspot(spot3d, get(view.fov));
+		aimtospot(spot3d, get(view.fov));
 		callwith(hotspot[spot3d], 'onclick');
 			
 	</action>
@@ -180,7 +183,7 @@
 	<action name="action_16" type="step">
 		toscene('scene_calabria_3');
 		close_pops();
-		looktohotspot(spot3e, get(view.fov));
+		aimtospot(spot3e, get(view.fov));
 		callwith(hotspot[spot3e], 'onclick');
 			
 	</action>
@@ -190,8 +193,9 @@
 	<action name="action_17" type="step">
 		
 		toscene('scene_calabria_4');
+		js('closeimage()');
 		close_pops();
-		looktohotspot(spot4a, get(view.fov));
+		aimtospot(spot4a, get(view.fov));
 		callwith(hotspot[spot4a], 'onclick');
 			
 	</action>
@@ -200,16 +204,17 @@
 		
 		toscene('scene_calabria_4');
 		close_pops();
-		looktohotspot(spot4b, get(view.fov));
-		callwith(hotspot[spot4b], 'onclick');
+		aimtospot(spot4b, get(view.fov));
+		showimage(1,1);
 			
 	</action>
 
 	<action name="action_19" type="step">
 		
 		toscene('scene_calabria_4');
+		js('closeimage()');
 		close_pops();
-		looktohotspot(spot4c, get(view.fov));
+		aimtospot(spot4c, get(view.fov));
 		callwith(hotspot[spot4c], 'onclick');
 			
 	</action>
@@ -218,7 +223,7 @@
 		
 		toscene('scene_calabria_4');
 		close_pops();
-		looktohotspot(spot4d, get(view.fov));
+		aimtospot(spot4d, get(view.fov));
 		callwith(hotspot[spot4d], 'onclick');
 			
 	</action>
@@ -227,7 +232,7 @@
 		
 		toscene('scene_calabria_4');
 		close_pops();
-		looktohotspot(spot4e, get(view.fov));
+		aimtospot(spot4e, get(view.fov));
 		callwith(hotspot[spot4e], 'onclick');
 			
 	</action>
@@ -236,7 +241,7 @@
 		
 		toscene('scene_calabria_4');
 		close_pops();
-		looktohotspot(spot4f, get(view.fov));
+		aimtospot(spot4f, get(view.fov));
 		callwith(hotspot[spot4f], 'onclick');
 			
 	</action>
@@ -245,7 +250,7 @@
 		
 		toscene('scene_calabria_4');
 		close_pops();
-		looktohotspot(spot4g, get(view.fov));
+		aimtospot(spot4g, get(view.fov));
 		callwith(hotspot[spot4g], 'onclick');
 			
 	</action>
@@ -256,7 +261,7 @@
 	
 	toscene('scene_calabria_6');
 	close_pops();
-	looktohotspot(spot5a, get(view.fov));
+	aimtospot(spot5a, get(view.fov));
 	callwith(hotspot[spot5a], 'onclick');
 			
 	</action>
@@ -266,7 +271,7 @@
 	
 	toscene('scene_calabria_6');
 	close_pops();
-	looktohotspot(spot5b, get(view.fov));
+	aimtospot(spot5b, get(view.fov));
 	callwith(hotspot[spot5b], 'onclick');
 			
 	</action>
@@ -275,7 +280,7 @@
 	
 	toscene('scene_calabria_6');
 	close_pops();
-	looktohotspot(spot5c, get(view.fov));
+	aimtospot(spot5c, get(view.fov));
 	callwith(hotspot[spot5c], 'onclick');
 			
 	</action>
@@ -284,7 +289,7 @@
 	
 	toscene('scene_calabria_6');
 	close_pops();
-	looktohotspot(spot5d, get(view.fov));
+	aimtospot(spot5d, get(view.fov));
 	callwith(hotspot[spot5d], 'onclick');
 			
 	</action>
@@ -293,7 +298,7 @@
 	
 	toscene('scene_calabria_6');
 	close_pops();
-	looktohotspot(spot5e, get(view.fov));
+	aimtospot(spot5e, get(view.fov));
 	callwith(hotspot[spot5e], 'onclick');
 			
 	</action>
@@ -305,7 +310,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6a, get(view.fov));
+	aimtospot(spot6a, get(view.fov));
 	callwith(hotspot[spot6a], 'onclick');
 			
 	</action>
@@ -315,7 +320,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6b, get(view.fov));
+	aimtospot(spot6b, get(view.fov));
 	callwith(hotspot[spot6b], 'onclick');
 			
 	</action>
@@ -324,7 +329,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6c, get(view.fov));
+	aimtospot(spot6c, get(view.fov));
 	callwith(hotspot[spot6c], 'onclick');
 			
 	</action>
@@ -333,7 +338,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6d, get(view.fov));
+	aimtospot(spot6d, get(view.fov));
 	callwith(hotspot[spot6d], 'onclick');
 			
 	</action>
@@ -342,7 +347,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6e, get(view.fov));
+	aimtospot(spot6e, get(view.fov));
 	callwith(hotspot[spot6e], 'onclick');
 			
 	</action>
@@ -351,7 +356,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6f, get(view.fov));
+	aimtospot(spot6f, get(view.fov));
 	callwith(hotspot[spot6f], 'onclick');
 			
 	</action>
@@ -360,7 +365,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6g, get(view.fov));
+	aimtospot(spot6g, get(view.fov));
 	callwith(hotspot[spot6g], 'onclick');
 			
 	</action>
@@ -369,7 +374,7 @@
 	
 	toscene('scene_calabria_8');
 	close_pops();
-	looktohotspot(spot6h, get(view.fov));
+	aimtospot(spot6h, get(view.fov));
 	callwith(hotspot[spot6h], 'onclick');
 			
 	</action>
@@ -380,7 +385,7 @@
 	
 	toscene('scene_calabria_10');
 	close_pops();
-	looktohotspot(spot7a, get(view.fov));
+	aimtospot(spot7a, get(view.fov));
 	callwith(hotspot[spot7a], 'onclick');
 			
 	</action>
@@ -389,7 +394,7 @@
 	
 	toscene('scene_calabria_10');
 	close_pops();
-	looktohotspot(spot7b, get(view.fov));
+	aimtospot(spot7b, get(view.fov));
 	callwith(hotspot[spot7b], 'onclick');
 			
 	</action>
@@ -398,7 +403,7 @@
 	
 	toscene('scene_calabria_10');
 	close_pops();
-	looktohotspot(spot7c, get(view.fov));
+	aimtospot(spot7c, get(view.fov));
 	callwith(hotspot[spot7c], 'onclick');
 			
 	</action>
@@ -407,7 +412,7 @@
 	
 	toscene('scene_calabria_10');
 	close_pops();
-	looktohotspot(spot7d, get(view.fov));
+	aimtospot(spot7d, get(view.fov));
 	callwith(hotspot[spot7d], 'onclick');
 			
 	</action>
@@ -418,7 +423,7 @@
 	
 	toscene('scene_calabria_11');
 	close_pops();
-	looktohotspot(spot8a, get(view.fov));
+	aimtospot(spot8a, get(view.fov));
 	callwith(hotspot[spot8a], 'onclick');
 			
 	</action>
@@ -427,7 +432,7 @@
 	
 	toscene('scene_calabria_11');
 	close_pops();
-	looktohotspot(spot8b, get(view.fov));
+	aimtospot(spot8b, get(view.fov));
 	callwith(hotspot[spot8b], 'onclick');
 			
 	</action>
@@ -436,7 +441,7 @@
 	
 	toscene('scene_calabria_11');
 	close_pops();
-	looktohotspot(spot8c, get(view.fov));
+	aimtospot(spot8c, get(view.fov));
 	callwith(hotspot[spot8c], 'onclick');
 			
 	</action>
@@ -445,7 +450,7 @@
 	
 	toscene('scene_calabria_11');
 	close_pops();
-	looktohotspot(spot8d, get(view.fov));
+	aimtospot(spot8d, get(view.fov));
 	callwith(hotspot[spot8d], 'onclick');
 			
 	</action>
@@ -456,7 +461,7 @@
 	
 	toscene('scene_calabria_12');
 	close_pops();
-	looktohotspot(spot9a, get(view.fov));
+	aimtospot(spot9a, get(view.fov));
 	callwith(hotspot[spot9a], 'onclick');
 			
 	</action>
@@ -465,7 +470,7 @@
 	
 	toscene('scene_calabria_12');
 	close_pops();
-	looktohotspot(spot9b, get(view.fov));
+	aimtospot(spot9b, get(view.fov));
 	callwith(hotspot[spot9b], 'onclick');
 			
 	</action>
@@ -474,7 +479,7 @@
 	
 	toscene('scene_calabria_12');
 	close_pops();
-	looktohotspot(spot9c, get(view.fov));
+	aimtospot(spot9c, get(view.fov));
 	callwith(hotspot[spot9c], 'onclick');
 			
 	</action>
@@ -483,7 +488,7 @@
 	
 	toscene('scene_calabria_12');
 	close_pops();
-	looktohotspot(spot9d, get(view.fov));
+	aimtospot(spot9d, get(view.fov));
 	callwith(hotspot[spot9d], 'onclick');
 			
 	</action>
@@ -494,7 +499,7 @@
 	
 	toscene('scene_calabria_13');
 	close_pops();
-	looktohotspot(spot10a, get(view.fov));
+	aimtospot(spot10a, get(view.fov));
 	callwith(hotspot[spot10a], 'onclick');
 			
 	</action>
@@ -503,7 +508,7 @@
 	
 	toscene('scene_calabria_13');
 	close_pops();
-	looktohotspot(spot10b, get(view.fov));
+	aimtospot(spot10b, get(view.fov));
 	callwith(hotspot[spot10b], 'onclick');
 			
 	</action>
@@ -512,7 +517,7 @@
 	
 	toscene('scene_calabria_13');
 	close_pops();
-	looktohotspot(spot10c, get(view.fov));
+	aimtospot(spot10c, get(view.fov));
 	callwith(hotspot[spot10c], 'onclick');
 			
 	</action>
@@ -521,7 +526,7 @@
 	
 	toscene('scene_calabria_13');
 	close_pops();
-	looktohotspot(spot10d, get(view.fov));
+	aimtospot(spot10d, get(view.fov));
 	callwith(hotspot[spot10d], 'onclick');
 			
 	</action>
@@ -532,7 +537,7 @@
 	
 	toscene('scene_calabria_14');
 	close_pops();
-	looktohotspot(spot11a, get(view.fov));
+	aimtospot(spot11a, get(view.fov));
 	callwith(hotspot[spot11a], 'onclick');
 			
 	</action>
@@ -541,7 +546,7 @@
 	
 	toscene('scene_calabria_14');
 	close_pops();
-	looktohotspot(spot11b, get(view.fov));
+	aimtospot(spot11b, get(view.fov));
 	callwith(hotspot[spot11b], 'onclick');
 			
 	</action>
@@ -550,7 +555,7 @@
 	
 	toscene('scene_calabria_14');
 	close_pops();
-	looktohotspot(spot11c, get(view.fov));
+	aimtospot(spot11c, get(view.fov));
 	callwith(hotspot[spot11c], 'onclick');
 			
 	</action>
@@ -561,7 +566,7 @@
 	
 	toscene('scene_calabria_15');
 	close_pops();
-	looktohotspot(spot12a, get(view.fov));
+	aimtospot(spot12a, get(view.fov));
 	callwith(hotspot[spot12a], 'onclick');
 			
 	</action>
@@ -570,7 +575,7 @@
 	
 	toscene('scene_calabria_15');
 	close_pops();
-	looktohotspot(spot12b, get(view.fov));
+	aimtospot(spot12b, get(view.fov));
 	callwith(hotspot[spot12b], 'onclick');
 			
 	</action>
@@ -579,7 +584,7 @@
 	
 	toscene('scene_calabria_15');
 	close_pops();
-	looktohotspot(spot12c, get(view.fov));
+	aimtospot(spot12c, get(view.fov));
 	callwith(hotspot[spot12c], 'onclick');
 			
 	</action>
@@ -588,7 +593,7 @@
 	
 	toscene('scene_calabria_15');
 	close_pops();
-	looktohotspot(spot12d, get(view.fov));
+	aimtospot(spot12d, get(view.fov));
 	callwith(hotspot[spot12d], 'onclick');
 			
 	</action>
@@ -597,7 +602,7 @@
 	
 	toscene('scene_calabria_15');
 	close_pops();
-	looktohotspot(spot12e, get(view.fov));
+	aimtospot(spot12e, get(view.fov));
 	callwith(hotspot[spot12e], 'onclick');
 			
 	</action>
@@ -608,7 +613,7 @@
 	
 	toscene('scene_calabria_17');
 	close_pops();
-	looktohotspot(spot13a, get(view.fov));
+	aimtospot(spot13a, get(view.fov));
 	callwith(hotspot[spot13a], 'onclick');
 			
 	</action>
@@ -617,7 +622,7 @@
 	
 	toscene('scene_calabria_17');
 	close_pops();
-	looktohotspot(spot13b, get(view.fov));
+	aimtospot(spot13b, get(view.fov));
 	callwith(hotspot[spot13b], 'onclick');
 			
 	</action>
@@ -626,7 +631,7 @@
 	
 	toscene('scene_calabria_17');
 	close_pops();
-	looktohotspot(spot13c, get(view.fov));
+	aimtospot(spot13c, get(view.fov));
 	callwith(hotspot[spot13c], 'onclick');
 			
 	</action>
@@ -637,7 +642,7 @@
 	
 	toscene('scene_calabria_24');
 	close_pops();
-	looktohotspot(spot14a, get(view.fov));
+	aimtospot(spot14a, get(view.fov));
 	callwith(hotspot[spot14a], 'onclick');
 			
 	</action>
@@ -646,7 +651,7 @@
 	
 	toscene('scene_calabria_24');
 	close_pops();
-	looktohotspot(spot14b, get(view.fov));
+	aimtospot(spot14b, get(view.fov));
 	callwith(hotspot[spot14b], 'onclick');
 			
 	</action>
@@ -655,11 +660,13 @@
 	
 	toscene('scene_calabria_24');
 	close_pops();
-	looktohotspot(spot14c, get(view.fov));
+	aimtospot(spot14c, get(view.fov));
 	callwith(hotspot[spot14c], 'onclick');
 
 
+	<!-- END OF STORY -->
 
+	laststorystep();
 			
 	</action>
 

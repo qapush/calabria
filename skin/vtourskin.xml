@@ -992,8 +992,8 @@
 		if(keycode == 34, skin_nextscene_loop(+1) );            	
 		if(keycode == 35, skin_gotoscene(calc(scene.count-1)) );
 		if(keycode == 36, skin_gotoscene(0) );                   -->
-		if(keycode == 37 AND story_step GT 1, callwith(layer[prev], 'onclick') );      
-		if(keycode == 39 AND story_step != story_length, callwith(layer[next], 'onclick') );      
+		if(keycode == 37 AND story_step GT 1 AND storymode == true, callwith(layer[prev], 'onclick') );      
+		if(keycode == 39 AND story_step != story_length AND storymode == true, callwith(layer[next], 'onclick') );      
 
 	</action>
 

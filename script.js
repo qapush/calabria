@@ -123,15 +123,15 @@ function resize(){
 
 const images = [
     'story/img1.jpg',
-    'story/img2.png',
+    'story/img2.jpg',
     'story/img3.png',
 ]
 
 const imagesTexts = [
 
-    'Popups like this could be used to showcase images. It\'s also an example of a feature working on JavaScript - it gives more control and works fast. \n \n So it has also a little bit transparent black background, so there remains some connection between the image and the context where it was opened.',
+    '<p style="color:#CD7829; font-weight:bold; text-align:center;">About North Park</p> <p> Named for its proximity to the 1,200-acre cultural landmark Balboa Park, North Park has established itself as the hip and progressive center of San Diego. With 30th Street being coined “the Nation’s best beer boulevard” by Men’s Journal, for it’s dozens of craft breweries, and with numerous art galleries, entertainment options and hip eats, and the distinguished Thursday Farmers Market, the neighborhood has seen a surge in affluent and hip residents in recent years.</p>',
 
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    '<p style="color:#CD7829; font-weight:bold; text-align:center;">Calabria Brand Roast</p> <p> To meet our community’s insatiable thirst for crafted roasts, we offer packaged Caffè Calabria beans and brew, available at the cafè, online, and sold wholesale to shops throughout Southern California and the country.</p>',
 
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     
@@ -178,7 +178,7 @@ function showimage(imgId, textId) {
     },50) ;
 
     if(textId !== null){
-        imgText.innerText = imagesTexts[textId];
+        imgText.innerHTML = imagesTexts[textId];
     } else {
         console.log('ni');
     }

@@ -10,16 +10,42 @@
 				, set(story_step,0); 
 		);
 
-		set(started,0);
 		set(story_length,0);
 		for(set(i,0), i LT action.count, inc(i), 
 		  if(action[get(i)].type == "step",inc(story_length); ,);
 		);  
+		set(storymode, true);
+	</action>
+
+
+	<action name="laststorystep">
 		
-				 
+		set(storymode, false);
+		set(layer[prev], visible="false", enabled="false");
+		set(layer[next], visible="false", enabled="false");
+		setuppops();
+		set(layer[restart__story], alpha=1, enabled=true);
+
+		
+	</action>
+
+	
+	<action name="restartstory">
+		
+		toscene('scene_calabria_1');
+		set(story_step,0);
+		set(storymode, true);
+		set(layer[next], enabled="true", visible="true");
+		set(layer[restart__story], alpha=0, enabled=false);
+		
+		story_next();
 		
 		
 	</action>
+
+
+
+	
 	
 	<!-- PREV NEXT ACTIONS -->
 	
@@ -76,7 +102,7 @@
 
 
 
-	<!-- REORDER BUTTONS ACTION -->
+	<!-- REORDER NEXT / PREV  BUTTONS ACTION -->
 
 	<action name="reorderbuttons">
 
@@ -114,7 +140,7 @@
 	</action>
 
 	<!-- HOTSPOT ACTIONS -->
-	
+
 		
 	<action name="setuppops">
 
@@ -123,6 +149,11 @@
 			
 			if(hotspot[get(i)].style === 'spot'
 				,
+
+				<!-- if storymode ends - enable pop -->
+
+				if(storymode == false,set(hotspot[get(i)], alpha=1, enabled=true),);
+
 				set(pop_ath, get(hotspot[get(i)].ath));
 				set(pop_atv, get(hotspot[get(i)].atv));
 				txtadd(popname, get(hotspot[get(i)].name), '_pop' );
@@ -184,6 +215,9 @@
 	
 				set(hotspot[get(i)].crop, 0|0|200|200);
 				set(hotspot[get(i)].onclick, click_open());
+
+				if(storymode == true,set(hotspot[get(i)], alpha=0, enabled=false),);
+
 					,
 					<!-- else -->
 			  );
@@ -192,6 +226,8 @@
 		);
 
 	</action>
+
+
 	
 	<action name="click_open">
 
@@ -213,13 +249,26 @@
 
 	</action>
 
+	<action name="aimtospot">
+	
+		looktohotspot(%1, get(view.fov));
+		set(hotspot[%1],
+			alpha=1,
+			enabled=true,
+		);
+
+
+	</action>
+
+	
+
 	<action name="showimage">
 
 		jscall( showimage (%1, %2) );
 
-
-
 	</action>
+
+	<!-- CHECK IF CURRENT PANO IS RIGHT FOR THE CURRENT STEP, IF NOT - LOAD IT-->
 
 	<action name="toscene">
 
@@ -233,33 +282,22 @@
 
 	</action>
 
-	<action name="laststep">
-
-		if(xml.scene == %1,
-			looktohotspot(%2, get(view.fov));
-			loadscene(%3,null,MERGE, get(skin_settings.loadscene_blend));, 
-			);
-
-		
-
-	</action>
-
 	
 	
 	<!-- MENU ACTIONS -->
 	
 	<action name="hidemenu">
 
-		tween(layer[menu__container].x, -110, 0.4, easeincirc, 
-				tween(layer[menu__info].x, -50, 0.4, easeincirc); 
-				set(layer[menu__info].enabled, true););
+		tween(layer[menu__container].x, -300, 0.4, ease-in);
+		tween(layer[menu__info].x, -50, 0.4, ease-in); 
+				set(layer[menu__info].enabled, true);
 
 	</action>
 
 	<action name="showmenu">
 		set(layer[menu__info].enabled, false);
-		tween(layer[menu__info].x, -120, 0.4, easeincirc);
-		tween(layer[menu__container].x, 0, 0.4, easeincirc);
+		tween(layer[menu__info].x, -300, 0.4, ease-in);
+		tween(layer[menu__container].x, 0, 0.4, ease-in);
 		<!-- callwith(layer[menu__info], 'onout'); -->
 
 	</action>
@@ -279,7 +317,7 @@
         onexitfullscreen=""
         onxmlcomplete=""
         onpreviewcomplete=""
-        onloadcomplete="setuppops(); setuppopsdata()"
+        onloadcomplete="setuppops(); setuppopsdata();"
         onblendcomplete=""
         onnewpano=""
         onremovepano=""

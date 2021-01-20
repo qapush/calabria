@@ -81,7 +81,7 @@
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="-361.929" vlookat="1.597" fovtype="MFOV" fov="95" fov.mobile="115.810" maxpixelzoom="0.7" fovmin="92.912206" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-361.929" vlookat="1.597" fovtype="MFOV"  fov="109" fov.mobile="115.810" maxpixelzoom="0.7" fovmin="92.912206" fovmax="140.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/calabria_1.tiles/preview.jpg" />
 
@@ -110,7 +110,7 @@
 		<hotspot name="spot1b" style="spot" ath="-353.91" atv="-1.96"/> 
 		<hotspot name="spot1b_pop" style="pop" html=""/>  
 
-		<hotspot name="spot1c" style="spot" ath="-272.13" atv="0.67"/> 
+		<hotspot name="spot1c" style="spot" ath="-272.13" atv="0.67" onclick="showimage(0,0);"/> 
 		<hotspot name="spot1c_pop" style="pop" html=""/>  
 
 		<hotspot name="spot1d" style="spot" ath="-516.02" atv="-20.15"/> 
@@ -120,14 +120,14 @@
 		<hotspot name="spot1e_pop" style="pop" html=""/>  
 
 
-
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>   
  
 	<scene name="scene_calabria_2" title="calabria_2" onstart="" thumburl="panos/calabria_2.tiles/thumb.svg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="95" fov.mobile="115.810" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" fov.mobile="115.810" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_2.tiles/preview.jpg" />
 
@@ -154,12 +154,12 @@
 		
 		
 	
- 
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene> 
 
 	<scene name="scene_calabria_3" title="calabria_3" onstart="" thumburl="panos/calabria_3.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_3.tiles/preview.jpg" />
 
@@ -181,12 +181,12 @@
 		<hotspot name="spot3e_pop" style="pop" html=""/>  
 
 		
-
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_4" title="calabria_4" onstart="" thumburl="panos/calabria_4.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_4.tiles/preview.jpg" />
 
@@ -210,13 +210,13 @@
 		<hotspot name="spot4f_pop" style="pop" html=""/>  
 		<hotspot name="spot4g_pop" style="pop" html=""/>  
 		
-
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 
 	<scene name="scene_calabria_6" title="calabria_6" onstart="" thumburl="panos/calabria_6.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_6.tiles/preview.jpg" />
 
@@ -224,7 +224,7 @@
 			<cube url="panos/calabria_6.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,1024,2112,4224" />
 		</image>
 
-		<hotspot name="spot5a" style="spot" ath="-12.165" atv="0.11"/> 
+		<hotspot name="spot5a" style="spot" ath="-20.497" atv="-12.24"/> 
 		<hotspot name="spot5b" style="spot" ath="-56.69" atv="2.869"/> 
 		<hotspot name="spot5c" style="spot" ath="-88.29" atv="-19.66"/> 
 		<hotspot name="spot5d" style="spot" ath="-112.74" atv="2.136"/> 
@@ -236,11 +236,12 @@
 		<hotspot name="spot5d_pop" style="pop" html=""/>  
 		<hotspot name="spot5e_pop" style="pop" html=""/>  
 
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_8" title="calabria_8" onstart="" thumburl="panos/calabria_8.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_8.tiles/preview.jpg" />
 
@@ -266,11 +267,12 @@
 		<hotspot name="spot6g_pop" style="pop" html=""/>  
 		<hotspot name="spot6h_pop" style="pop" html=""/>  
 
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_10" title="calabria_10" onstart="" thumburl="panos/calabria_10.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_10.tiles/preview.jpg" />
 
@@ -288,12 +290,12 @@
 		<hotspot name="spot7c_pop" style="pop" html=""/>  
 		<hotspot name="spot7d_pop" style="pop" html=""/>  
 
-
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_11" title="calabria_11" onstart="" thumburl="panos/calabria_11.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_11.tiles/preview.jpg" />
 
@@ -310,11 +312,12 @@
 		<hotspot name="spot8c_pop" style="pop" html=""/>  
 		<hotspot name="spot8d_pop" style="pop" html=""/>  
 
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_12" title="calabria_12" onstart="" thumburl="panos/calabria_12.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_12.tiles/preview.jpg" />
 
@@ -332,11 +335,12 @@
 		<hotspot name="spot9b_pop" style="pop" html=""/>  
 		<hotspot name="spot9d_pop" style="pop" html=""/>  
 
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_13" title="calabria_13" onstart="" thumburl="panos/calabria_13.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_13.tiles/preview.jpg" />
 
@@ -355,12 +359,12 @@
 		<hotspot name="spot10d_pop" style="pop" html=""/>  
 
 
-
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_14" title="calabria_14" onstart="" thumburl="panos/calabria_14.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_14.tiles/preview.jpg" />
 
@@ -376,11 +380,13 @@
 		<hotspot name="spot11b_pop" style="pop" html=""/>  
 		<hotspot name="spot11c_pop" style="pop" html=""/>  
 
+
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 	<scene name="scene_calabria_15" title="calabria_15" onstart="" thumburl="panos/calabria_15.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_15.tiles/preview.jpg" />
 
@@ -401,14 +407,14 @@
 		<hotspot name="spot12d_pop" style="pop" html=""/>  
 		<hotspot name="spot12e_pop" style="pop" html=""/>  
 		
-
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 
 
 	<scene name="scene_calabria_17" title="calabria_17" onstart="" thumburl="panos/calabria_17.tiles/thumb.svg" lat="" lng="" heading="">
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV"  fov="109" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/calabria_17.tiles/preview.jpg" />
 
@@ -425,6 +431,8 @@
 
 		<hotspot name="spot13c_pop" style="pop" html=""/> 
 
+
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 
@@ -446,7 +454,7 @@
 		<hotspot name="spot14a_pop" style="pop" html=""/>  
 		<hotspot name="spot14b_pop" style="pop" html=""/>  
 	 
-		
+		<hotspot name="plate" url="skin/plate.png" ath="0.000" atv="90.000" distorted="true" handcursor="false" capture="false"/>
 	</scene>
 
 		
